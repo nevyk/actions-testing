@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Release
+    if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Configure git
+        run: |
+          git config --global user.name "nevyk"
+          git config --global user.email "73322863+nevyk@users.noreply.github.com"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Cut Release
+        run: pnpm run release
+
+      - name: Push release commits to repo
+        run: git push --follow-tags origin main
+
+      - name: Create GitHub release
+        run: gh release create v$(cat package.json | jq -r .version) --notes-file CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Call Deploy Workflow
+        uses: ./.github/workflows/deploy.yml
+        with:
+          versionTag: v$(cat package.json | jq -r .version)
+          environment: Production

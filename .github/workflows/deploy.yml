@@ -1,0 +1,51 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      versionTag:
+        description: "Version to deploy"
+        required: true
+        type: string
+      environment:
+        description: "Environment in which to deploy"
+        requird: true
+        type: environment
+  workflow_dispatch:
+    inputs:
+      versionTag:
+        description: "Version to deploy"
+        required: true
+        type: string
+      environment:
+        description: "Environment in which to deploy"
+        requird: true
+        type: environment
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.versionTag }}
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install -r
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Deploy
+        run: |
+          echo "${{ secrets.PRODUCTION_SECRET }}" | base64 -d > file.txt
+          cat file.txt
