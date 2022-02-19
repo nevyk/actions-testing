@@ -9,7 +9,7 @@ on:
         type: string
       environment:
         description: "Environment in which to deploy"
-        requird: true
+        required: true
         type: environment
 
 jobs:

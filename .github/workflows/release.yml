@@ -41,7 +41,7 @@ jobs:
         run: echo "::set-output name=tag::v$(cat package.json | jq -r .version)"
 
   deploy:
-    name: Deploy / Prod
+    name: Deploy Production
     needs: release
     uses: ./.github/workflows/deploy.yml
     with:
