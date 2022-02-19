@@ -11,16 +11,6 @@ on:
         description: "Environment in which to deploy"
         requird: true
         type: environment
-  workflow_dispatch:
-    inputs:
-      versionTag:
-        description: "Version to deploy"
-        required: true
-        type: string
-      environment:
-        description: "Environment in which to deploy"
-        requird: true
-        type: environment
 
 jobs:
   deploy:
