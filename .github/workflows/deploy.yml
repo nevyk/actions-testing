@@ -10,14 +10,14 @@ on:
       environment:
         description: "Environment in which to deploy"
         required: true
-        type: environment
+        type: string
 
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
-    steps:
+    steps:x
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
