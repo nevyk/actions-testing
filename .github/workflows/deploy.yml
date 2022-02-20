@@ -12,7 +12,7 @@ jobs:
     environment: Production
     steps:
       - name: Log Triggering Event
-        run: echo ${{ tojson(github.event) }}
+        run: echo ${{ tojson(github) }}
       - name: Checkout Code
         uses: actions/checkout@v2
 
