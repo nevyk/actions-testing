@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
+      - name: Annotate Tag
+        run: echo "::notice title=Version::${{ inputs.versionTag }}"
+
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
