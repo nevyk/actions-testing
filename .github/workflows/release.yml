@@ -45,5 +45,5 @@ jobs:
     needs: release
     uses: ./.github/workflows/deploy.yml
     with:
-      versionTag: needs.release.outputs.tag
+      versionTag: ${{ needs.release.outputs.tag }}
       environment: Production
