@@ -7,8 +7,8 @@ jobs:
   release:
     name: Release
     if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
-    outputs:
-      tag: ${{ steps.gitTagOutput.outputs.tag }}
+    # outputs:
+    #   tag: ${{ steps.gitTagOutput.outputs.tag }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -34,18 +34,18 @@ jobs:
       - name: Create GitHub release
         run: gh release create v$(cat package.json | jq -r .version) --notes-file CHANGELOG.md
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
-      - name: Output Git Tag
-        id: gitTagOutput
-        run: |
-          echo "::set-output name=tag::v$(cat package.json | jq -r .version)"
-          echo "::notice title=Version::v$(cat package.json | jq -r .version)"
+  #     - name: Output Git Tag
+  #       id: gitTagOutput
+  #       run: |
+  #         echo "::set-output name=tag::v$(cat package.json | jq -r .version)"
+  #         echo "::notice title=Version::v$(cat package.json | jq -r .version)"
 
-  deploy:
-    name: Production
-    needs: release
-    uses: ./.github/workflows/deploy.yml
-    with:
-      versionTag: ${{ needs.release.outputs.tag }}
-      environment: Production
+  # deploy:
+  #   name: Production
+  #   needs: release
+  #   uses: ./.github/workflows/deploy.yml
+  #   with:
+  #     versionTag: ${{ needs.release.outputs.tag }}
+  #     environment: Production

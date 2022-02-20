@@ -8,6 +8,11 @@ on:
     branches:
       - "main"
   workflow_dispatch:
+    inputs:
+      testText:
+        description: Test Text
+        required: true
+        type: string
 
 jobs:
   build:
