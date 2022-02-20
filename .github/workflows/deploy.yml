@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
+      - name: Log Github
+        run: echo ${{ github.event }}
       - name: Checkout Code
         uses: actions/checkout@v2
 
