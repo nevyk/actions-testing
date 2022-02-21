@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.16 (2022-02-21)
+
+
+### Features
+
+* **ci:** added separate change log for release notes ([7cc35ff](https://github.com/nevyk/actions-testing/commit/7cc35ffa810e7fe1df31ff979b636fec8cc28643))
+
 ### 0.0.15 (2022-02-21)
 
 ### 0.0.14 (2022-02-20)
