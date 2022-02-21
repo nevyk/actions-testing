@@ -26,7 +26,7 @@ jobs:
       - name: Cut Release
         run: |
           pnpm run --silent release -- --dry-run --silent > release-notes.md
-          pnpm run --silent release -- --silent > release-notes.md
+          pnpm run release
 
       - name: Push release commits to repo
         run: git push --follow-tags origin main
