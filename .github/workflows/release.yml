@@ -27,7 +27,7 @@ jobs:
         run: pnpm run release
 
       - name: Push release commits to repo
-        run: git push --follow-tags origin main
+        run: git push --follow-tags origin feat/test-branch
 
       - name: Create GitHub release
         run: gh release create v$(cat package.json | jq -r .version) --notes-file CHANGELOG.md
