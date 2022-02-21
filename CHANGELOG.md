@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.21 (2022-02-21)
+
+
+### Features
+
+* fixed typo in release ([b7fe83c](https://github.com/nevyk/actions-testing/commit/b7fe83c95420205f470b5938ca490fbb823ba376))
+
 ### 0.0.20 (2022-02-21)
 
 
