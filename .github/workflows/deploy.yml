@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
+      - name: Log Triggering Event
+        run: echo ${{ tojson(github) }}
       - name: Checkout Code
         uses: actions/checkout@v2
 
