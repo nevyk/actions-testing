@@ -30,7 +30,9 @@ jobs:
         run: git push --follow-tags origin main
 
       - name: Create GitHub release
-        run: gh release create v$(cat package.json | jq -r .version) --notes-file release-notes.md
+        run: |
+        cat release-notes.md
+        gh release create v$(cat package.json | jq -r .version) --notes-file release-notes.md
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
