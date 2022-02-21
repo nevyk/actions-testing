@@ -24,14 +24,15 @@ jobs:
         run: pnpm install
 
       - name: Cut Release
-        run: pnpm run --silent release -- --silent > release-notes.md
+        run: |
+          pnpm run --silent release -- --dry-run --silent > release-notes.md
+          pnpm run --silent release -- --silent > release-notes.md
 
       - name: Push release commits to repo
         run: git push --follow-tags origin main
 
       - name: Create GitHub release
         run: |
-          ls -hal
           gh release create v$(cat package.json | jq -r .version) --notes-file release-notes.md
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
