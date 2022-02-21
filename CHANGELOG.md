@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.26 (2022-02-21)
+
+
+### Features
+
+* remove text ([5c94fa0](https://github.com/nevyk/actions-testing/commit/5c94fa0d41f28a6f0ca9331bb34fe80237f57717))
+
 ### 0.0.25 (2022-02-21)
 
 
