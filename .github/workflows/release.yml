@@ -6,7 +6,7 @@ on:
 jobs:
   release:
     name: Release
-    if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
+    # if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
