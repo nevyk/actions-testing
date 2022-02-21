@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.22 (2022-02-21)
+
+
+### Features
+
+* add release-notes.md file to gitignore ([130b11a](https://github.com/nevyk/actions-testing/commit/130b11a69f8e3cc3d677eb038612be45e6d5ccc5))
+
 ### 0.0.21 (2022-02-21)
 
 
