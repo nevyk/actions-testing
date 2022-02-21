@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.25 (2022-02-21)
+
+
+### Features
+
+* added some more text to index ([f98245f](https://github.com/nevyk/actions-testing/commit/f98245f6b95ad3cc9c2edfddb64c2c9f2688e9df))
+
 ### 0.0.24 (2022-02-21)
 
 ### 0.0.23 (2022-02-21)
