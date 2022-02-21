@@ -24,7 +24,7 @@ jobs:
         run: pnpm install
 
       - name: Cut Release
-        run: pnpm run release -- --silent > release-notes.md
+        run: pnpm run --silent release -- --silent > release-notes.md
 
       - name: Push release commits to repo
         run: git push --follow-tags origin main
