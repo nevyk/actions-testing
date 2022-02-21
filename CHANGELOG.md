@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.23 (2022-02-21)
+
+
+### Features
+
+* trying out ls command to see if file exists ([60302a0](https://github.com/nevyk/actions-testing/commit/60302a0b5deb71332fbe3a9eb5e5cad57781be2c))
+
 ### 0.0.22 (2022-02-21)
 
 
